@@ -151,10 +151,12 @@
 	 (xdir (if (<= x1 x2) 1 -1))
 	 (ydir (if (<= y1 y2) 1 -1))
          (r (max xdiff ydiff)))
-    (loop for i from 0 to r
-	  collect (list
-		   (+ x1 (/ (* i xdiff xdir) r))
-		   (+ y1 (/ (* i ydiff ydir) r))))))
+    (if (= 0 r)
+	(list (list x1 y1))     
+	(loop for i from 0 to r
+	      collect (list
+		       (+ x1 (/ (* i xdiff xdir) r))
+		       (+ y1 (/ (* i ydiff ydir) r)))))))
 
 (defun polygon (&optional (center-x 0) (center-y 0) (sides 4) (radius 4))
   (let ((angle (/ (* 2 pi) sides))
