@@ -97,7 +97,7 @@ It's a port of the [drawille](https://github.com/asciimoo/drawille) library.
 
 ## Animated examples
 
-There are also animated examples which use `cl-charms`
+There are also animated examples which use `cl-charms`, pressing `#\q` closes the animation.
 
 * `(cl-drawille/examples-animations:sine-tracking-example)`
 * `(cl-drawille/examples-animations:rotating-cube-example)`
